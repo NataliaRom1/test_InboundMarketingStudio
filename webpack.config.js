@@ -15,7 +15,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+    assetModuleFilename: 'assets/[hash][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -39,15 +40,54 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [require(post-preset-env)],
+                plugins: [require('postcss-preset-env')],
               }
             },
           },
-          'sass-loader'
+          // 'sass-loader'
         ]
       },
       {
-        test: /\.m?js$/,
+        test: /\.woff2?$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
+      },
+      {
+        test: /\.(png|jpe?g|webp|gif|svg)$/i,
+        type: 'asset/resource',
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
+            }
+          }
+        ],
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
+      },
+      {
+        test: /\.m?js$/i,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

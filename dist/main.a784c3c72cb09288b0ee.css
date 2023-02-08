@@ -350,9 +350,9 @@ template {
 
 @font-face {
   font-family: 'Noto Sans';
-  src: url(860818f88fb4029ae129.ttf) format("ttf"), 
-    url(81c87dff73ab0db54744.woff) format("woff"),
-    url(06de6f9ab5d97910be77.woff2) format("woff2");
+  src:
+    url(fonts/notosans.woff) format("woff"),
+    url(fonts/notosans.woff2) format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -360,9 +360,9 @@ template {
 
 @font-face {
   font-family: 'Noto Sans';
-  src: url(088fa0aa70ac482fb4a6.ttf) format("ttf"),
-    url(e2f034f70cb503bc0eae.woff) format("woff"),
-    url(84361ebe5b112305e0bc.woff2) format("woff2");
+  src:
+    url(fonts/notosansbold.woff) format("woff"),
+    url(fonts/notosansbold.woff2) format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -378,7 +378,7 @@ template {
 }
 
 .header {
-  background-image: url(ae8ae0b6a0146ce97478.png);
+  background-image: url(assets/marian-kroell.png);
   background-repeat: no-repeat;
   background-color: #010101;
   height: 396px;
@@ -539,6 +539,7 @@ template {
   display: grid;
   grid-template-columns: repeat(auto-fill, 360px);
   grid-auto-flow: dense;
+  grid-gap: 30px;
   gap: 30px;
   justify-content: center;
 }
@@ -578,7 +579,7 @@ template {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 @media (max-width: 1199px) and (min-width: 992px) {
@@ -733,7 +734,7 @@ template {
 }
 
 .card__image_background_sakura {
-  background-image: url(ae8ae0b6a0146ce97478.png);
+  background-image: url(assets/marian-kroell.png);
 }
 
 .card__image_background_pink {
@@ -745,7 +746,7 @@ template {
 }
 
 .card__image_background_cameras {
-  background-image: url(332742b8c0d826fd9120.png);
+  background-image: url(assets/chris-yang.png);
 }
 
 .card__image_background_black {
@@ -914,6 +915,7 @@ template {
 }
 
 .carousel__container {
+  grid-gap: 30px;
   gap: 30px;
   margin-bottom: 40px;
   display: grid;
@@ -956,6 +958,7 @@ template {
   transition: .6s ease;
   display: grid;
   grid-auto-flow: column;
+  grid-gap: 30px;
   gap: 30px;
 }
 
@@ -966,7 +969,7 @@ template {
 }
 
 .carousel__btn {
-  background-image: url(4ff526f607eec55870a9.png);
+  background-image: url(assets/Path.png);
   background-color: transparent;
   width: 13px;
   height: 26px;
