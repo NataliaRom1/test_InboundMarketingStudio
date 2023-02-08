@@ -1,3 +1,6 @@
+import '../index.html';
+import '../pages/index.css';
+
 let newCardsArray = [];
 const carouselTrackElement = document.querySelector('.carousel__track');
 const carouselContainerElement = document.querySelector('.carousel__container');
